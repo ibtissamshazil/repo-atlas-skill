@@ -1,0 +1,4 @@
+interface:
+  display_name: "Repo Atlas"
+  short_description: "Map any codebase into a visual HTML guide"
+  default_prompt: "Use $repo-atlas to inspect this repository and create a clear self-contained HTML architecture and handover guide."
