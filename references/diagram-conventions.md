@@ -31,7 +31,9 @@ Do not use a cylinder for an in-memory collection or a diamond for a step with n
 - Visually distinguish reads/calls, model inference, and writes when that improves comprehension.
 - Use dashed edges for optional, indirect, inferred, or ownership-boundary relationships, and label why.
 - Label branches (`YES`, `NO`, `VALID`, `INVALID`) near the originating decision.
-- Avoid line crossings. Route long return paths around the outside of the main process.
+- Draw each relationship as one continuous path with a visible arrowhead. Do not leave apparent gaps at bends or let markers disappear behind shapes.
+- Route connectors through consistent horizontal or vertical lanes. Keep them outside node and label bounding boxes, with enough separation that parallel arrows remain distinguishable.
+- Avoid line crossings and overlapping arrowheads. Route long return paths around the outside of the main process. If clean routing is still impossible, reposition nodes or split the content into a focused subdiagram.
 - If a downstream integration is not implemented in the repository, label the edge as an unverified contract.
 
 ## Text density
@@ -55,4 +57,7 @@ Do not use a cylinder for an in-memory collection or a diamond for a step with n
 - Give the SVG a `<title>` and `<desc>`.
 - Make interactive SVG groups keyboard focusable and expose detail outside the SVG in an `aria-live` inspector.
 - Keep important meaning available without color.
+- Use a stable SVG `viewBox` so diagrams scale without distorting shapes, labels, connectors, or arrowheads.
 - Provide horizontal scrolling for wide diagrams and a print stylesheet.
+- When a diagram is too large to read at its default responsive size, add clearly labeled zoom in, zoom out, and reset buttons. Support keyboard activation and scrolling or panning of the enlarged canvas; do not rely on browser page zoom as the only solution.
+- Set sensible zoom limits, keep the current zoom level understandable, and ensure reset restores the complete diagram. Zooming must not cause connectors to detach, break, overlap labels, or become clipped.

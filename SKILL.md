@@ -41,6 +41,8 @@ The flow tab should include:
 - Worker/batch behavior when concurrency exists; distinguish queue intake, concurrent tasks, and true provider-side batching.
 - Separate compact maps for workflows that are standalone or offline. Never draw an edge into the production path when code does not contain that edge.
 - Short labels in shapes. Put implementation detail in click/focus inspectors or the documentation tab.
+- Clean connector routing: use continuous arrow paths with visible arrowheads, route edges through dedicated lanes, and never run arrows through nodes, labels, or other arrowheads. Reposition nodes or split the map when crossings cannot be avoided.
+- Accessible zoom for large diagrams: when a map cannot remain legible at its normal responsive size, provide zoom in, zoom out, and reset controls plus scroll or pan. Keep controls keyboard accessible and preserve readable labels and arrowheads at every zoom level.
 
 Keep the HTML self-contained: inline CSS, inline SVG, and small inline JavaScript only. Avoid network-loaded fonts, icon libraries, Mermaid CDNs, and build steps. Make it responsive, keyboard accessible, and printable.
 
@@ -60,7 +62,7 @@ Read [references/review-checklist.md](references/review-checklist.md), then:
 
 1. Run `python <skill-directory>/scripts/validate_documentation.py <output-html>`.
 2. Render the page in a browser when available. Check desktop, narrow viewport, both tabs, keyboard navigation, clickable nodes, and print layout.
-3. Check all anchors, duplicate IDs, SVG labels, line crossings, clipping, and contrast.
+3. Check all anchors, duplicate IDs, SVG labels, arrow continuity, arrowhead visibility, line crossings, node/label overlaps, clipping, contrast, and any zoom controls.
 4. If a route or application code changed, run focused tests and any inexpensive project lint/type checks.
 5. Review the diff for secrets, invented facts, stale settings, and unrelated edits.
 

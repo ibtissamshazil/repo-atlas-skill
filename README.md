@@ -4,6 +4,8 @@ A portable Agent Skill that inspects a software repository and creates a self-co
 
 The generated page emphasizes a low-text end-to-end diagram, conventional flowchart shapes, deployment boundaries, workers/batching, data stores, decision rules, review persistence, and separate maps for offline or standalone workflows.
 
+See [QUICKSTART.md](QUICKSTART.md) for installation and run commands.
+
 ## Install
 
 Copy this entire directory into one of the following locations.
@@ -29,6 +31,7 @@ Restart the agent session after installing a project or personal skill if it is 
 ```text
 repo-atlas-skill/
 |-- SKILL.md
+|-- QUICKSTART.md
 |-- agents/openai.yaml
 |-- assets/documentation-template.html
 |-- references/diagram-conventions.md
